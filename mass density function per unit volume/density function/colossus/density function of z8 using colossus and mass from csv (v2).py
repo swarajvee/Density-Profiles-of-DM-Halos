@@ -30,7 +30,7 @@ def MassFunc(z,l,file_path):
 
 z = 8
 #for getting actual value of M
-file_path ='/home/swaraj/Documents/s10 MSc Major Projects/mass density function per unit volume/density function/Hubble data/csv data/z8.csv'
+file_path ='/Users/swarajv/Education/s10 MSc Major Project/Hubble data/csv data/z8.csv'
 l =500
 
 #M = 10**np.arange(11.0, 15.5, 0.1)

@@ -45,7 +45,7 @@ def MassFunc(z,M,l):
 
     plt.loglog()
     mfunc = mass_function.massFunction(M, z, mdef = '200m', model = 'tinker08', q_out ='dndlnM')
-    plt.plot(M, mfunc/(M),'--', label = 'Mass Density using Colossus Package', alpha=0.2, color='red')
+    plt.plot(M, 2.303*(mfunc/M),'--', label = 'Mass Density using Colossus Package', alpha=0.2, color='red')
 
 
 #for analytic method

@@ -18,7 +18,7 @@ def MassFunc(z,M,l):
     plt.loglog()
 
     mfunc = mass_function.massFunction(M, z, mdef = '200m', model = 'tinker08', q_out ='dndlnM')
-    plt.plot(M, mfunc/V,'--', label = 'z8 with generated mass', alpha=0.4, color='red')
+    plt.plot(M, 2.303*(mfunc/M),'--', label = 'z8 with generated mass', alpha=0.4, color='red')
 
     legend = plt.legend()
     legend.legendHandles[0]._sizes = [50]

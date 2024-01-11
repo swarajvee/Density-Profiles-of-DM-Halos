@@ -23,8 +23,8 @@ def MassFunc(z,l,file_path,N):
     plt.ylabel(r'$\log_{10} (\mathrm{Density Function})$')
     plt.loglog()
 
-    plt.scatter(M, mfunc1/V, label = 'z8 with csv data', alpha=0.4, s=0.7)
-    plt.plot(N, mfunc2/V,'--', label = 'z8 with generated mass', alpha=0.4, color='red')
+    plt.scatter(M, 2.303*(mfunc1/M), label = 'z8 with csv data', alpha=0.4, s=0.7)
+    plt.plot(N, 2.303*(mfunc2/N),'--', label = 'z8 with generated mass', alpha=0.4, color='red')
 
     legend = plt.legend()
     legend.legendHandles[0]._sizes = [50]

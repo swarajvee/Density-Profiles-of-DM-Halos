@@ -20,7 +20,7 @@ def MassFunc(z,l,file_path):
     plt.ylabel(r'$\log_{10} (\mathrm{Density Function})$')
     plt.loglog()
     mfunc = mass_function.massFunction(M, z, mdef = '200m', model = 'tinker08', q_out ='dndlnM')
-    plt.scatter(M, mfunc/V, label = 'z = 8', alpha=0.4, s=0.7)
+    plt.scatter(M, 2.303*(mfunc/M), label = 'z = 8', alpha=0.4, s=0.7)
     legend = plt.legend()
     legend.legendHandles[0]._sizes = [50]
     '''plt.xticks(np.linspace(10**11,10**13,5))

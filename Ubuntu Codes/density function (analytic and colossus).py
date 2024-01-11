@@ -23,7 +23,7 @@ def mass_density_fun(file_path,l,b):
     z = data['Z'].tolist()
     bineq = np.logspace(np.log10(min(N)),np.log10(max(N)),b)
 
-    frequency, bin_edge = np.histogram(np.log10(N),bins=bineq)    
+    frequency, bin_edge = np.histogram(N,bins=bineq)    
     mass_pt = []
     bin_width = []
     for k in range(len(bin_edge)-1):

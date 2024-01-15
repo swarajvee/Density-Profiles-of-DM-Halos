@@ -1,17 +1,29 @@
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt 
+fig=plt.figure(figsize=(10,8),dpi=100)
 from colossus.lss import mass_function
 from colossus.cosmology import cosmology
-cosmology.setCosmology('planck18-only')
 
-fig=plt.figure(figsize=(10,8),dpi=100)
+#adding a new cosmology
+
+"""  *********  MY COSMOS ************
+    om0, omega_M, cosmological parameter= 0.315192
+    H0, hubble constant= 67.36
+    ob0,omega_b, baryon density= 0.02237
+    sigma8, ZD_Pk_norm, power spectrum normalization= 8.0 
+    ns, n_s, spectral index of the primordial power spectrum= 0.9649"""
+
+
+
+
 
 #analytic method
 def mass_density_fun(file_path,l,b):
     h = 0.6736
     box_size = l/h
     V= box_size**3
+
     data = pd.read_csv(file_path)
     #mass
     N = data['N'].tolist()
@@ -36,16 +48,22 @@ def mass_density_fun(file_path,l,b):
     plt.loglog()
     plt.scatter(mass_pt,density_fun,label='Observed Mass Density',s=7)
     
+    
 #from colossus
 def MassFunc(z,M,l):
     h = 0.6736
     box_size = l/h
     V= box_size**3
 
-    #adding a new cosmology
-    params = {'flat': True, 'H0': 67.36, 'Om0': 0.315192, 'Ob0': 0.02237, 'sigma8': 8, 'ns': 0.9649}
-    cosmology.addCosmology('myCosmo', **params)
-    cosmo = cosmology.setCosmology('myCosmo')
+    cosmo= cosmology.setCosmology('planck18-only')
+    cosmo.H0= 67.36
+    cosmo.Om0= 0.315192
+    #cosmo.Ob0= 0.02237
+    cosmo.sigma8= 0.807952
+    cosmo.ns= 0.9649
+    #cosmo.o
+
+    cosmo.checkForChangedCosmology()
 
     plt.loglog()
     mfunc = mass_function.massFunction(M, z, mdef = '200m', model = 'tinker08', q_out ='dndlnM')
@@ -59,12 +77,12 @@ b= 20 #no of bins
 mass_density_fun(file_path,l,b)
 
 #for colossus 
-z = 8 #redshift
+z = 8.072500247186802 #redshift
 M = 10**np.arange(11.0, 12.3, 0.1)
 MassFunc(z,M,l)
 
 plt.title(f'Mass Density vs Mass (Redshift: {z})')
-plt.xlabel(r'$\log_{10} (\mathrm{M_{\odot}})$')
+plt.xlabel(r'$\log_{10} (\mathrm{Mass})$')
 plt.ylabel(r'$\log_{10} (\mathrm{Density Function})$')
 plt.legend()
 plt.grid()

@@ -5,6 +5,7 @@ import pandas as pd
 
 from colossus.cosmology import cosmology
 cosmology.setCosmology('planck18')
+help(cosmology.setCosmology('planck18-only'))
 fig =plt.figure(figsize=(10,8),dpi=100)
 
 def MassFunc(z,l,file_path):

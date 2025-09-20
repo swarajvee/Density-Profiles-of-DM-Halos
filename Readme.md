@@ -1,7 +1,7 @@
 # Analysis of Dark Matter Halo Density Profiles
 
 ## Overview
-This repository contains Python scripts for analyzing cosmological simulation data of dark matter (DM) halos from the AbacusSummit project. The primary goals are to calculate and study two fundamental properties of DM halos: the Halo Mass Function (HMF) and the Radial Density Profile. The analysis compares results from the simulation data with established theoretical models.
+This repository contains Python scripts for analyzing cosmological simulation data of dark matter (DM) halos from the AbacusSummit project (https://abacussummit.readthedocs.io/en/latest/). The primary goals are to calculate and study two fundamental properties of DM halos: the Halo Mass Function (HMF) and the Radial Density Profile. The analysis compares results from the simulation data with established theoretical models.
 
 ## Key Analyses
 
@@ -11,6 +11,7 @@ This part of the project focuses on determining the number density of halos as a
 *   **Observational HMF from Simulation Data:**
     *   Scripts read halo catalogs from AbacusSummit's `.asdf` files using the `abacusnbody` library.
     *   Halo data (primarily mass, calculated from particle count `N`) is extracted and often processed into `.csv` files.
+    *   Abacusutils python package is currently linux only. So I ran python scripts in linux machines and converted those data into csv format so that all the operating systems will support it (inorder to conver the asdf files please refer the codes named 'Ubuntu codes' in the directories)
     *   The mass data is binned to calculate the number of halos per unit mass per unit volume (`dn/dM`), providing an "observed" HMF from the simulation.
 
 *   **Theoretical HMF and Comparison:**

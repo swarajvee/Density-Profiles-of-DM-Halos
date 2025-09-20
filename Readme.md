@@ -11,7 +11,7 @@ This part of the project focuses on determining the number density of halos as a
 *   **Observational HMF from Simulation Data:**
     *   Scripts read halo catalogs from AbacusSummit's `.asdf` files using the `abacusnbody` library.
     *   Halo data (primarily mass, calculated from particle count `N`) is extracted and often processed into `.csv` files.
-    *   Abacusutils python package is currently linux only. So I ran python scripts in linux machines and converted those data into csv format so that all the operating systems will support it (inorder to conver the asdf files please refer the codes named 'Ubuntu codes' in the directories)
+    *   abacusutils python package is currently linux only. So I ran python scripts in linux machines and converted those data into csv format so that all the operating systems will support it (in order to convert the asdf files please refer the codes named 'Ubuntu codes' in the directories)
     *   The mass data is binned to calculate the number of halos per unit mass per unit volume (`dn/dM`), providing an "observed" HMF from the simulation.
 
 *   **Theoretical HMF and Comparison:**

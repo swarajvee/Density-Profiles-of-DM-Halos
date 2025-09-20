@@ -1,5 +1,4 @@
 # Analysis of Dark Matter Halo Density Profiles
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/swarajvee/Density-Profiles-of-DM-Halos)
 
 ## Overview
 This repository contains Python scripts for analyzing cosmological simulation data of dark matter (DM) halos from the AbacusSummit project. The primary goals are to calculate and study two fundamental properties of DM halos: the Halo Mass Function (HMF) and the Radial Density Profile. The analysis compares results from the simulation data with established theoretical models.
